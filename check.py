@@ -10,17 +10,3 @@ c1 = np.sqrt(2*np.pi*CC*CC/(hbar*v*F12) + (np.pi*QQ*PP/(hbar*v))**2/(F23*F13) + 
 c2 = np.sqrt(1 - c1*c1 - c3*c3)
 
 print(c1, c2, c3)
-
-#result = np.array([CC, c1, c2, c3])
-#result = result.reshape(1,-1)
-##############################################################
-#results = np.loadtxt("half_CC_PP.txt")
-#file = "half_CC_PP.txt"
-#if results.ndim == 1 and empty(file):
-#    results = results.reshape(1, -1)
-#    results = np.hstack((results, result))
-#else:
-#    results = np.vstack((results, result))
-#
-## Save the results to a file
-#np.savetxt("half_CC_PP.txt", results, header="CC/2 |c1| |c2| |c3|")
