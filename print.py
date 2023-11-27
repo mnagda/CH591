@@ -24,7 +24,7 @@ for AA in AA_values:
         file.writelines(data)
 
     # Run each .py file and capture the output
-    files_to_run = ['test.py']  # List of .py files
+    files_to_run = ['sample.py', 'check.py', 'test.py']  # List of .py files
     for file_to_run, data_list in zip(files_to_run, [check_data, test_data, sample_data]):
         output = subprocess.check_output(['python', file_to_run], universal_newlines=True)
 
@@ -39,6 +39,6 @@ def write_data_to_file(file_name, data):
         for row in data:
             file.write(' '.join(map(str, row)) + '\n')
 
-#write_data_to_file('check_data.txt', check_data)
+write_data_to_file('check_data.txt', check_data)
 write_data_to_file('test_data.txt', test_data)
-#write_data_to_file('sample_data.txt', sample_data)
+write_data_to_file('sample_data.txt', sample_data)
