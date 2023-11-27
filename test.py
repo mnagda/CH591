@@ -1,6 +1,6 @@
 ## Code to perform numerically exact quantum dynamics by solving the eigen functions and energies of the full Hamiltonian.
 ## Requires file user_input.py, that contains simulation parameters and function for the potential energy and initial conditions.
-## This code written specifically for a 2 level problem coupled to a coordinate x.
+## This code written specifically for a 3 level problem coupled to a coordinate x.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -48,18 +48,6 @@ def construct_Hamiltonian(n,xgrid,mass):
         V11[i]=Hamil[i,i]
         V22[i]=Hamil[i+n,i+n]
         V33[i]=Hamil[i+2*n,i+2*n]
-
-    ## Plots the adiabatic potential energy surfaces
-    #plt.plot(xgrid,V11*100)
-    #plt.plot(xgrid,V22*100)
-    #plt.plot(xgrid,V33*100)
-    #plt.title("Adiabatic Potentials")
-    #plt.xlabel("R")
-    #plt.xlim([-10,10])
-    #plt.ylabel(r'$V_{ad} (x 10^{-2})$')
-    #plt.tight_layout()
-    # plt.savefig("V_ad.png", dpi=res)
-    #plt.show()
 
     # Plots the diabatic potential energy surfaces
     #plt.plot(xgrid,V11*100)
@@ -267,17 +255,3 @@ plt.show()
 ##plt.savefig("psi_d.png",dpi=res)
 #plt.show()
 print(np.sqrt(abs(rho_d[0,0,nsteps-1])), np.sqrt(abs(rho_d[1,1,nsteps-1])), np.sqrt(abs(rho_d[2,2,nsteps-1])))
-
-#result = np.array([CC, np.sqrt(abs(rho_d[0,0,nsteps-1])), np.sqrt(abs(rho_d[1,1,nsteps-1])), np.sqrt(abs(rho_d[2,2,nsteps-1]))])
-#result = result.reshape(1,-1)
-##############################################################
-#results = np.loadtxt("half_CC_exact.txt")
-#file = "half_CC_exact.txt"
-#if results.ndim == 1 and empty(file):
-#    results = results.reshape(1, -1)
-#    results = np.hstack((results, result))
-#else:
-#    results = np.vstack((results, result))
-#
-## Save the results to a file
-#np.savetxt("half_CC_exact.txt", results, header="CC/2 |c1| |c2| |c3|")
