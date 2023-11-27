@@ -3,8 +3,6 @@ from user_input import *
 import matplotlib.pyplot as plt
 import os
 
-def empty(file):
-    return os.path.getsize(file) == 0
 ## Plotting parameters
 res=600
 SMALL_SIZE = 14
@@ -63,17 +61,3 @@ print(abs(c_t[0]), abs(c_t[1]), abs(c_t[2]))
 #plt.tight_layout()
 #plt.savefig("rho.png",dpi=res)
 #plt.show()
-
-#result = np.array([CC, abs(c_t[0]), abs(c_t[1]), abs(c_t[2])])
-#result = result.reshape(1,-1)
-##############################################################
-#results = np.loadtxt("half_CC_ni.txt")
-#file = "half_CC_ni.txt"
-#if results.ndim == 1 and empty(file):
-#    results = results.reshape(1, -1)
-#    results = np.hstack((results, result))
-#else:
-#    results = np.vstack((results, result))
-
-# Save the results to a file
-#np.savetxt("half_CC_ni.txt", results, header="CC/2 |c1| |c2| |c3|")
